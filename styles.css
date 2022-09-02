@@ -1,0 +1,57 @@
+html {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+body {    
+    display: flex;
+    justify-content: center;
+    background-color: #1F1D1D;
+}
+
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.header {
+
+}
+
+.calcBox {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    border: 2px solid white;
+    height: 600px;
+    width: 500px;
+}
+
+.visorDiv {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    height: 40px;
+    margin: 10px;
+}
+
+.visorDiv p {
+    margin-left: 10px;
+}
+
+.numGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 5px;
+}
+
+.gridButton {
+    font-weight: bold;
+    background-color: #1F1D1D;
+    color: white;
+    border: 1px solid white;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
