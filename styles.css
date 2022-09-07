@@ -45,7 +45,7 @@ body {
     row-gap: 5px;
 }
 
-.gridButton {
+/* .gridButton {
     font-weight: bold;
     background-color: #1F1D1D;
     color: white;
@@ -54,4 +54,6 @@ body {
     justify-content: center;
     align-items: center;
     height: 30px;
-}
+    transition: all;
+    transition-duration: .2s;
+} */
