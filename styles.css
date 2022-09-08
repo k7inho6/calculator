@@ -15,24 +15,26 @@ body {
 }
 
 .header {
-
+    display: flex;
+    justify-content: center;
 }
 
 .calcBox {
     display: flex;
     flex-direction: column;
-    padding: 10px;
+    padding: 30px;
     border: 2px solid #6d5f6d;
-    height: 600px;
-    width: 500px;
+    height: 450px;
+    width: 400px;
     border-radius: .75rem;
 }
 
 .visorDiv {
     display: flex;
+    background-color: #6d5f6d;
     flex-direction: row;
     border: 2px solid #372f37;
-    height: 50px;
+    height: 60px;
     margin: 10px;
 }
 
@@ -45,15 +47,15 @@ body {
 
 .numGrid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    row-gap: 5px;
-    column-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    /*row-gap: 2px;
+    column-gap: 2px;*/
 }
 
 .gridButton, .gridButton2, .opButton {
-    width: var(--mainSize);
+    height: 60px;
     cursor: pointer;
-    background-color: #1F1D1D;
+    background-color: #838395;
     border: 2px solid #372f37;
     border-radius: .05rem;
     box-sizing: border-box;
@@ -73,10 +75,16 @@ body {
 
 .gridButton:hover, .gridButton2:hover, .opButton:hover {
     cursor: pointer;
-    background-color: #484646;
+    background-color: #484646 !important;
 }
 
 .gridButton:active, .gridButton2:active, .opButton:active {
     cursor: pointer;
-    background-color: #dedede;
+    background-color: #dedede !important;
 }
+
+.backAndReset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
