@@ -6,6 +6,9 @@ let subDisplay = '';
 
 let isEqual = false;
 
+const display = document.getElementById("displayText");
+const displayUpper = document.getElementById("displayUpperText");
+
 function operate(operator, num1, num2) {
     value = operator(num1, num2);
     return value;
@@ -24,11 +27,15 @@ function multiply(num1, num2) {
 }
 
 function divide(num1, num2) {
-    return num1 / num2;
+    if (num2 == 0) {
+        return 'Cannot divide by zero';
+    } else {
+        return num1 / num2;
+    }
 }
 
-const display = document.getElementById("displayText");
-const displayUpper = document.getElementById("displayUpperText");
+//const display = document.getElementById("displayText");
+//const displayUpper = document.getElementById("displayUpperText");
 
 function populate() {
     if (this.className == 'gridButton') {
