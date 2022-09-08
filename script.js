@@ -99,6 +99,23 @@ function resetCalc() {
     changeNumClassTo1();
 }
 
+function addFloat() {
+    let testArray = [];
+    let element = document.getElementById('calc1');
+    if (element.className == 'gridButton') {
+        testArray = [...firstNum];
+        if (!testArray.some(item => item == '.')) {
+            firstNum += '.';
+            display.innerText = firstNum;
+        }
+    } else {
+        testArray = [...secondNum];
+        if (!testArray.some(item => item == '.')) {
+            secondNum += '.';
+            display.innerText = secondNum;
+        }
+    }
+}
 
 for (i=0; i<10; i++) {
     let element = document.getElementById(`calc${i}`);
@@ -123,6 +140,9 @@ keyEqual.addEventListener('click', performEqual);
 const keyReset = document.getElementById("calcReset");
 keyReset.addEventListener('click', resetCalc);
 
+const keyFloat = document.getElementById("calcFloat");
+keyFloat.addEventListener('click', addFloat);
+
 /* 
 add event listener to every button
 if first button clicked =/= number, disconsider
@@ -141,4 +161,5 @@ start saving the new 2number
 
 colocar a função do float, backspace
 melhorar a função do equal pra fazer repetir a ultima operação
+fazer o operador aparecer no display
 */
