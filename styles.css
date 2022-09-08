@@ -32,17 +32,26 @@ body {
 .visorDiv {
     display: flex;
     background-color: #6d5f6d;
-    flex-direction: row;
+    flex-direction: column;
     border: 2px solid #372f37;
-    height: 60px;
+    height: 70px;
     margin: 10px;
+    align-items: left;
+    justify-content: center;
 }
 
 .visorDiv p {
+    margin: 0;
     margin-left: 10px;
     font-weight: bold;
     font-size: 20px;
 
+}
+
+#displayUpperText {
+    color: #d9d9d9;
+    font-size: 15px;
+    margin-bottom: 5px;
 }
 
 .numGrid {
@@ -87,4 +96,6 @@ body {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+
 

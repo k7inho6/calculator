@@ -2,6 +2,7 @@ let firstNum = '';
 let secondNum = '';
 let operation = '';
 let value = 0;
+let subDisplay = '';
 
 let isEqual = false;
 
@@ -27,6 +28,7 @@ function divide(num1, num2) {
 }
 
 const display = document.getElementById("displayText");
+const displayUpper = document.getElementById("displayUpperText");
 
 function populate() {
     if (this.className == 'gridButton') {
@@ -39,6 +41,7 @@ function populate() {
         display.innerText = firstNum;
     }
 }
+
 
 function changeNumClassTo2() {
     for (i=0; i<10; i++) {
@@ -59,7 +62,9 @@ function registerOperation() {
         performOperation();
     }
     operation = this.innerText;
-    console.log(operation);
+    //console.log(operation);
+    subDisplay = firstNum + ' ' + operation;
+    displayUpper.innerText = subDisplay;
     changeNumClassTo2();
 }
 
@@ -81,19 +86,21 @@ function performOperation() {
     }
     firstNum = String(result);
     secondNum = '';
-    console.log(firstNum);
     populate();
 }
 
 function performEqual() {
-    performOperation();
+    if (secondNum != '') {
+        displayUpper.innerText = subDisplay + ' ' + secondNum + ' =';
+        performOperation();
+    }
     changeNumClassTo1();
-    //firstNum = '';
-    //secondNum = '';
 }
  
 function resetCalc() {
     display.innerText = '';
+    displayUpper.innerText = '';
+    subDisplay = '';
     firstNum = '';
     secondNum = '';
     changeNumClassTo1();
@@ -166,23 +173,3 @@ keyFloat.addEventListener('click', addFloat);
 const keyBack = document.getElementById("calcBack");
 keyBack.addEventListener('click', useBack);
 
-/* 
-add event listener to every button
-if first button clicked =/= number, disconsider
-when number is clicked, start storing its value 
-keep storing the value until a operator number is clicked
-when operator number is clicked, "save" the number actual value,
-and save the operation
-if button clicked = operation, change the operation value
-if button clicked after operation is a number,
-start storing the 2number value
-keep storing the value until another key =/= number is clicked
-if another operator is clicked, merge 1number and 2number into 1number,
-based on first operation, save the second operation,
-start saving the new 2number
-
-
-colocar a função do float, backspace
-melhorar a função do equal pra fazer repetir a ultima operação
-fazer o operador aparecer no display
-*/
