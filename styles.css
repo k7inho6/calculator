@@ -22,38 +22,61 @@ body {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border: 2px solid white;
+    border: 2px solid #6d5f6d;
     height: 600px;
     width: 500px;
+    border-radius: .75rem;
 }
 
 .visorDiv {
     display: flex;
     flex-direction: row;
-    border: 2px solid white;
-    height: 40px;
+    border: 2px solid #372f37;
+    height: 50px;
     margin: 10px;
 }
 
 .visorDiv p {
     margin-left: 10px;
+    font-weight: bold;
+    font-size: 20px;
+
 }
 
 .numGrid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     row-gap: 5px;
+    column-gap: 5px;
 }
 
-/* .gridButton {
-    font-weight: bold;
+.gridButton, .gridButton2, .opButton {
+    width: var(--mainSize);
+    cursor: pointer;
     background-color: #1F1D1D;
-    color: white;
-    border: 1px solid white;    
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 30px;
+    border: 2px solid #372f37;
+    border-radius: .05rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    flex: 0 0 auto;
+    font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: .75rem 1.2rem;
+    
+    text-align: center;
     transition: all;
     transition-duration: .2s;
-} */
+}
+
+
+.gridButton:hover, .gridButton2:hover, .opButton:hover {
+    cursor: pointer;
+    background-color: #484646;
+}
+
+.gridButton:active, .gridButton2:active, .opButton:active {
+    cursor: pointer;
+    background-color: #dedede;
+}

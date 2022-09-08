@@ -99,6 +99,7 @@ function resetCalc() {
     changeNumClassTo1();
 }
 
+
 for (i=0; i<10; i++) {
     let element = document.getElementById(`calc${i}`);
     element.addEventListener('click', populate);
@@ -121,6 +122,7 @@ keyEqual.addEventListener('click', performEqual);
 
 const keyReset = document.getElementById("calcReset");
 keyReset.addEventListener('click', resetCalc);
+
 /* 
 add event listener to every button
 if first button clicked =/= number, disconsider
@@ -136,11 +138,7 @@ if another operator is clicked, merge 1number and 2number into 1number,
 based on first operation, save the second operation,
 start saving the new 2number
 
+
+colocar a função do float, backspace
+melhorar a função do equal pra fazer repetir a ultima operação
 */
-
-// depois de apertar o =, por exemplo 1 + 2 + 3 = 6, ao apertar um operador,
-// acontece a troca de classe para gridButton2.. 
-
-// preciso fazer com que ao apertar um operador após =, a calculadora continue fazendo
-// as operações em sequencia com o resultado normalmente
-// e se apertar = novamente, repetir a última operação
