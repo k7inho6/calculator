@@ -3,6 +3,8 @@ let secondNum = '';
 let operation = '';
 let value = 0;
 
+let isEqual = false;
+
 function operate(operator, num1, num2) {
     value = operator(num1, num2);
     return value;
@@ -68,43 +70,34 @@ function performOperation() {
     if (operation == '+') {
         result = operate(add, firstNum, secondNum);
     }
+    if (operation == '-') {
+        result = operate(subtract, firstNum, secondNum);
+    }
+    if (operation == 'x') {
+        result = operate(multiply, firstNum, secondNum);
+    }
+    if (operation == '/') {
+        result = operate(divide, firstNum, secondNum);
+    }
     firstNum = String(result);
     secondNum = '';
     console.log(firstNum);
     populate();
 }
 
-//populate(operate(divide,2,3));
-
-// const key0 = document.getElementById("calc0");
-// key0.addEventListener('click', populate);
-
-// const key1 = document.getElementById("calc1");
-// key1.addEventListener('click', populate);
-
-// const key2 = document.getElementById("calc2");
-// key2.addEventListener('click', populate);
-
-// const key3 = document.getElementById("calc3");
-// key3.addEventListener('click', populate);
-
-// const key4 = document.getElementById("calc4");
-// key4.addEventListener('click', populate);
-
-// const key5 = document.getElementById("calc5");
-// key5.addEventListener('click', populate);
-
-// const key6 = document.getElementById("calc6");
-// key6.addEventListener('click', populate);
-
-// const key7 = document.getElementById("calc7");
-// key7.addEventListener('click', populate);
-
-// const key8 = document.getElementById("calc8");
-// key8.addEventListener('click', populate);
-
-// const key9 = document.getElementById("calc9");
-// key9.addEventListener('click', populate);
+function performEqual() {
+    performOperation();
+    changeNumClassTo1();
+    //firstNum = '';
+    //secondNum = '';
+}
+ 
+function resetCalc() {
+    display.innerText = '';
+    firstNum = '';
+    secondNum = '';
+    changeNumClassTo1();
+}
 
 for (i=0; i<10; i++) {
     let element = document.getElementById(`calc${i}`);
@@ -124,9 +117,10 @@ const keySub = document.getElementById("calcSub");
 keySub.addEventListener('click', registerOperation);
 
 const keyEqual = document.getElementById("calcEqual");
-keyEqual.addEventListener('click', performOperation);
+keyEqual.addEventListener('click', performEqual);
 
-
+const keyReset = document.getElementById("calcReset");
+keyReset.addEventListener('click', resetCalc);
 /* 
 add event listener to every button
 if first button clicked =/= number, disconsider
@@ -143,3 +137,10 @@ based on first operation, save the second operation,
 start saving the new 2number
 
 */
+
+// depois de apertar o =, por exemplo 1 + 2 + 3 = 6, ao apertar um operador,
+// acontece a troca de classe para gridButton2.. 
+
+// preciso fazer com que ao apertar um operador após =, a calculadora continue fazendo
+// as operações em sequencia com o resultado normalmente
+// e se apertar = novamente, repetir a última operação
