@@ -117,6 +117,26 @@ function addFloat() {
     }
 }
 
+function useBack() {
+    let testArray = [];
+    let element = document.getElementById('calc1');
+    if (element.className == 'gridButton') {
+        testArray = [...firstNum];
+        testArray.splice((testArray.length - 1), 1);
+        console.log(testArray);
+        firstNum = testArray.join('');
+        console.log(firstNum);
+        display.innerText = firstNum;
+    } else {
+        testArray = [...secondNum];
+        testArray.splice((testArray.length - 1), 1);
+        console.log(testArray);
+        secondNum = testArray.join('');
+        console.log(secondNum);
+        display.innerText = secondNum;
+    }
+}
+
 for (i=0; i<10; i++) {
     let element = document.getElementById(`calc${i}`);
     element.addEventListener('click', populate);
@@ -142,6 +162,9 @@ keyReset.addEventListener('click', resetCalc);
 
 const keyFloat = document.getElementById("calcFloat");
 keyFloat.addEventListener('click', addFloat);
+
+const keyBack = document.getElementById("calcBack");
+keyBack.addEventListener('click', useBack);
 
 /* 
 add event listener to every button
